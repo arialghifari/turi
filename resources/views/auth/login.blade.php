@@ -1,64 +1,41 @@
-<x-guest-layout>
-  <x-auth-card>
-    <x-slot name="logo">
-      <a href="/">
-        <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-      </a>
-    </x-slot>
+@extends('components.auth')
 
+@section('content')
+  <form action="{{ route('login') }}" method="POST" class="space-y-3 w-full">
+    @csrf
+    <div class="logo flex flex-col justify-center items-center my-5">
+      <a href="{{ route('home') }}">
+        <img src="{{ url('frontend/images/turi-logo.png') }}" class="object-contain" alt="" />
+      </a>
+    </div>
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
-
     <!-- Validation Errors -->
     <x-auth-validation-errors class="mb-4" :errors="$errors" />
-
-    <form method="POST" action="{{ route('login') }}">
-      @csrf
-
-      <!-- Email Address -->
-      <div>
-        <x-label for="email" :value="__('Email')" />
-
-        <x-input id="email" class="bg-gray-100 block mt-1 w-full p-2" type="email" name="email" :value="old('email')"
-          required autofocus />
-      </div>
-
-      <!-- Password -->
-      <div class="mt-4">
-        <x-label for="password" :value="__('Password')" />
-        
-        <x-input id="password" class="bg-gray-100 block mt-1 w-full p-2" type="password" name="password" required
-          autocomplete="current-password" />
-      </div>
-
-      <!-- Remember Me -->
-      <div class="block mt-4">
-        <label for="remember_me" class="inline-flex items-center">
-          <input id="remember_me" type="checkbox"
-            class="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-            name="remember">
-          <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
-        </label>
-      </div>
-
-      <div class="flex items-center justify-between mt-4">
-        <x-button class="w-full text-center flex items-center">
-          {{ __('Log in') }}
-        </x-button>
-      </div>
-
-      <div class="flex items-center justify-center space-x-4 mt-3">
-        @if(Route::has('password.request'))
-          <a class="underline text-sm text-gray-600 hover:text-gray-900"
-            href="{{ route('password.request') }}">
-            {{ __('Forgot password') }}
-          </a>
-        @endif
-        <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('register') }}">
-          {{ __('Register account') }}
-        </a>
-      </div>
-
-    </form>
-  </x-auth-card>
-</x-guest-layout>
+    <div class="email flex flex-col space-y-1 text-gray-600 font-light">
+      <label for="email">Email</label>
+      <input value="{{ old('email') }}" required type="email" id="email" name="email" class="w-full py-2 px-2 rounded-sm border border-gray-300" />
+    </div>
+    <div class="password flex flex-col space-y-1 text-gray-600 font-light">
+      <label for="password">Password</label>
+      <input required type="password" id="password" name="password"
+        class="w-full py-2 px-2 rounded-sm border border-gray-300 tracking-widest" />
+    </div>
+    <div class="remember-me text-gray-600 font-light space-x-1">
+      <input class="" type="checkbox" name="remember" id="remember-me" />
+      <label for="remember-me">Remember Me</label>
+    </div>
+    <div class="btn-signin">
+      <button type="submit" class="text-center text-white tracking-wide rounded-sm text-wh ite py-2 w-full">
+        SIGN IN
+      </button>
+    </div>
+    <div class="forgot-pass flex justify-evenly text-sm text-center underline">
+      <a href="{{ route('password.request') }}" class="text-gray-500 hover:text-gray-600">forgot
+        password</a>
+      <a href="{{ route('register') }}" class="text-gray-500 hover:text-gray-600">i don't have
+        account</a>
+    </div>
+  </form>
+  </div>
+@endsection

@@ -1,39 +1,30 @@
-<x-guest-layout>
-    <x-auth-card>
-        <x-slot name="logo">
-            <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-            </a>
-        </x-slot>
+@extends('components.auth')
 
-        <div class="mb-4 text-sm text-gray-600">
-            {{ __('Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.') }}
-        </div>
-
-        <!-- Session Status -->
-        <x-auth-session-status class="mb-4" :status="session('status')" />
-
-        <!-- Validation Errors -->
-        <x-auth-validation-errors class="mb-4" :errors="$errors" />
-
-        <form method="POST" action="{{ route('password.email') }}">
-            @csrf
-
-            <!-- Email Address -->
-            <div>
-                <x-label for="email" :value="__('Email')" />
-
-                <x-input id="email" class="block mt-1 w-full p-2 bg-gray-100" type="email" name="email" :value="old('email')" required autofocus />
-            </div>
-
-            <div class="flex items-center justify-center mt-4">
-                <a href="{{ route('login') }}" class="underline text-sm text-gray-600 hover:text-gray-900 mr-3">
-                    Back
-                </a>
-                <x-button>
-                    {{ __('Email Password Reset Link') }}
-                </x-button>
-            </div>
-        </form>
-    </x-auth-card>
-</x-guest-layout>
+@section('content')
+  <form action="{{ route('password.email') }}" method="POST" class="space-y-3 w-full">
+    @csrf
+    <div class="logo flex flex-col justify-center items-center my-5">
+      <a href="{{ route('home') }}">
+        <img src="{{ url('frontend/images/turi-logo.png') }}" class="object-contain" alt="" />
+      </a>
+    </div>
+    <!-- Session Status -->
+    <x-auth-session-status class="mb-4" :status="session('status')" />
+    <!-- Validation Errors -->
+    <x-auth-validation-errors class="mb-4" :errors="$errors" />
+    <div class="text-sm text-gray-500 text-center">Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.</div>
+    <div class="email flex flex-col space-y-1 text-gray-600 font-light">
+      <label for="email">Email</label>
+      <input value="{{ old('email') }}" required type="email" id="email" name="email" class="w-full py-2 px-2 rounded-sm border border-gray-300" />
+    </div>
+    <div class="btn-signin">
+      <button type="submit" class="text-center text-white tracking-wide rounded-sm text-wh ite py-2 w-full">
+        EMAL PASSWORD RESET LINK
+      </button>
+    </div>
+    <div class="forgot-pass flex justify-evenly text-sm text-center underline">
+      <a href="{{ route('login') }}" class="text-gray-500 hover:text-gray-600">Back</a>
+    </div>
+  </form>
+  </div>
+@endsection

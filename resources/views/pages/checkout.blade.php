@@ -178,8 +178,8 @@
                   <td class="font-light text-right px-2">$ {{ $item->transaction_total }},00</td>
                 </tr>
                 <tr class="h-10">
-                  <td class="font-semibold text-gray-500 px-2">
-                    Total ( + Unique Code )
+                  <td class="font-bold text-gray-500 px-2">
+                    Total + Unique Code
                   </td>
                   <td class="font-bold text-lg text-right px-2">
                     $ {{ $item->transaction_total }},<span>{{ mt_rand(0,99) }}</span>

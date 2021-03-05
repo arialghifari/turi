@@ -1,66 +1,48 @@
-<x-guest-layout>
-    <x-auth-card>
-        <x-slot name="logo">
-            <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-            </a>
-        </x-slot>
+@extends('components.auth')
 
-        <!-- Validation Errors -->
-        <x-auth-validation-errors class="mb-4" :errors="$errors" />
+@section('content')
+<form action="{{ route('register') }}" method="POST" class="space-y-1.5 w-full">
+@csrf
+  <div class="logo flex flex-col justify-center items-center">
+    <a href="{{ route('home') }}">
+      <img src="{{ url('frontend/images/turi-logo.png') }}" class="object-contain" alt="" />
+    </a>
+  </div>
+  <!-- Session Status -->
+  <x-auth-session-status class="mb-4" :status="session('status')" />
+  <!-- Validation Errors -->
+  <x-auth-validation-errors class="mb-4" :errors="$errors" />
 
-        <form method="POST" action="{{ route('register') }}">
-            @csrf
-
-            <!-- Name -->
-            <div>
-                <x-label for="name" :value="__('Name')" />
-
-                <x-input id="name" class="block mt-1 w-full p-2 bg-gray-100" type="text" name="name" :value="old('name')" required autofocus />
-            </div>
-
-            <!-- Username -->
-            <div class="mt-4">
-                <x-label for="username" :value="__('Username')" />
-
-                <x-input id="username" class="block mt-1 w-full p-2 bg-gray-100" type="text" name="username" :value="old('username')" required autofocus />
-            </div>
-
-            <!-- Email Address -->
-            <div class="mt-4">
-                <x-label for="email" :value="__('Email')" />
-
-                <x-input id="email" class="block mt-1 w-full p-2 bg-gray-100" type="email" name="email" :value="old('email')" required />
-            </div>
-
-            <!-- Password -->
-            <div class="mt-4">
-                <x-label for="password" :value="__('Password')" />
-
-                <x-input id="password" class="block mt-1 w-full p-2 bg-gray-100"
-                                type="password"
-                                name="password"
-                                required autocomplete="new-password" />
-            </div>
-
-            <!-- Confirm Password -->
-            <div class="mt-4">
-                <x-label for="password_confirmation" :value="__('Confirm Password')" />
-
-                <x-input id="password_confirmation" class="block mt-1 w-full p-2 bg-gray-100"
-                                type="password"
-                                name="password_confirmation" required />
-            </div>
-
-            <div class="flex items-center justify-center mt-4">
-                <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
-                    {{ __('Already registered?') }}
-                </a>
-
-                <x-button class="ml-4">
-                    {{ __('Register') }}
-                </x-button>
-            </div>
-        </form>
-    </x-auth-card>
-</x-guest-layout>
+  <div class="flex flex-col space-y-1 text-gray-600 font-light">
+    <label for="name">Name</label>
+    <input value="{{ old('name') }}" required type="name" id="name" name="name" class="text-sm w-full py-1 px-1 rounded-sm border border-gray-300" />
+  </div>
+  <div class="flex flex-col space-y-1 text-gray-600 font-light">
+    <label for="username">Username</label>
+    <input value="{{ old('username') }}" required type="username" id="username" name="username" class="text-sm w-full py-1 px-1 rounded-sm border border-gray-300" />
+  </div>
+  <div class="email flex flex-col space-y-1 text-gray-600 font-light">
+    <label for="email">Email</label>
+    <input value="{{ old('email') }}" required type="email" id="email" name="email" class="text-sm w-full py-1 px-1 rounded-sm border border-gray-300" />
+  </div>
+  <div class="password flex flex-col space-y-1 text-gray-600 font-light">
+    <label for="password">Password</label>
+    <input required type="password" id="password" name="password"
+      class="text-sm w-full py-1 px-1 rounded-sm border border-gray-300 tracking-widest" />
+  </div>
+  <div class="flex flex-col space-y-1 text-gray-600 font-light">
+    <label for="password_confirmation">Confirm Password</label>
+    <input required type="password" id="password_confirmation" name="password_confirmation"
+      class="text-sm w-full py-1 px-1 rounded-sm border border-gray-300 tracking-widest" />
+  </div>
+  <div class="btn-signin">
+    <button type="submit" class="mt-2 text-center text-white tracking-wide rounded-sm text-wh ite py-2 w-full">
+      SIGN IN
+    </button>
+  </div>
+  <div class="forgot-pass flex justify-evenly text-sm text-center underline">
+    <a href="{{ route('login') }}" class="text-gray-500 hover:text-gray-600">Already registered?</a>
+  </div>
+</form>
+</div>
+@endsection

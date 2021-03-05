@@ -1,13 +1,20 @@
 document.addEventListener("DOMContentLoaded", () => {
 
   // dropdown
-  const btnServices = document.querySelector("#btn-services");
-  const dropdownLink = document.querySelector("#dropdown-link");
+  const dropdown = document.querySelector(".dropdown");
+  const dropdownMenu = document.getElementById("dropdown-menu");
 
-  btnServices.addEventListener('click', () => {
-    dropdownLink.classList.toggle('absolute');
-    dropdownLink.classList.toggle('hidden');
+  dropdown.addEventListener('mouseover', () => {
+    dropdownMenu.classList.remove('hidden');
+    dropdownMenu.classList.add('absolute');
+    dropdownMenu.classList.add('animate-dropdown');
   });
+  
+  dropdown.addEventListener('mouseleave', () => {
+    dropdownMenu.classList.remove('absolute');
+    dropdownMenu.classList.add('hidden');
+  });
+  
 
   // mobile nav
   const hamButton = document.querySelector("#hamburger-nav");

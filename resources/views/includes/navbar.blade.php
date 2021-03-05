@@ -20,7 +20,7 @@
           </svg>
         </button>
 
-        <div id="dropdown-link" class="hidden right-1 bg-white rounded-sm w-48 border border-gray-300 font-light">
+        <div id="dropdown-menu" class="hidden right-1 bg-white rounded-sm w-48 border border-gray-300 font-light">
           <a class="block m-1 py-1 px-5 hover:bg-gray-100" href="#">Link 1</a>
           <a class="block m-1 py-1 px-5 hover:bg-gray-100" href="#">Link 2</a>
           <a class="block m-1 py-1 px-5 hover:bg-gray-100" href="#">Link 3</a>

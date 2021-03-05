@@ -62,7 +62,7 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
           @foreach ($items as $item)
             <div class="card text-white text-center flex flex-col justify-between py-7 bg-cover bg-center rounded-sm"
-            style="background-image: url('{{ $item->travel_galleries->count() ? Storage::url($item->travel_galleries->first()->image) : '' }}')">
+            style="background-image: url('{{ $item->travel_galleries->count() ? Storage::url($item->travel_galleries->first()->image) : ( url('frontend/images/holder-card.png') ) }}')">
               <div>
                 <div class="card-country">{{ $item->country }}</div>
                 <div class="card-city text-2xl font-semibold">{{ $item->title }}</div>
@@ -159,7 +159,7 @@
     <!-- BUTTONS -->
     <section class="button my-20 flex justify-center space-x-4">
       <a href="#" class="btn btn-help py-3 px-5 bg-gray-200 hover:bg-gray-300 rounded-sm text-gray-500">I Need Help</a>
-      <a href="{{ route('register') }}" class="btn btn-begin py-3 px-5 bg-gray-400 rounded-sm text-white">Get Started</a>
+      <a href="{{ route('login') }}" class="btn btn-begin py-3 px-5 bg-gray-400 rounded-sm text-white">Get Started</a>
     </section>
   </main>
 @endsection

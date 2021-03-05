@@ -1,48 +1,37 @@
-<x-guest-layout>
-    <x-auth-card>
-        <x-slot name="logo">
-            <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-            </a>
-        </x-slot>
+@extends('components.auth')
 
-        <!-- Validation Errors -->
-        <x-auth-validation-errors class="mb-4" :errors="$errors" />
-
-        <form method="POST" action="{{ route('password.update') }}">
-            @csrf
-
-            <!-- Password Reset Token -->
-            <input type="hidden" name="token" value="{{ $request->route('token') }}">
-
-            <!-- Email Address -->
-            <div>
-                <x-label for="email" :value="__('Email')" />
-
-                <x-input id="email" class="block mt-1 p-2 w-full" type="email" name="email" :value="old('email', $request->email)" required autofocus />
-            </div>
-
-            <!-- Password -->
-            <div class="mt-4">
-                <x-label for="password" :value="__('Password')" />
-
-                <x-input id="password" class="block mt-1 w-full p-2" type="password" name="password" required />
-            </div>
-
-            <!-- Confirm Password -->
-            <div class="mt-4">
-                <x-label for="password_confirmation" :value="__('Confirm Password')" />
-
-                <x-input id="password_confirmation" class="block mt-1 w-full p-2"
-                                    type="password"
-                                    name="password_confirmation" required />
-            </div>
-
-            <div class="flex items-center justify-end mt-4">
-                <x-button>
-                    {{ __('Reset Password') }}
-                </x-button>
-            </div>
-        </form>
-    </x-auth-card>
-</x-guest-layout>
+@section('content')
+  <form action="{{ route('password.update') }}" method="POST" class="space-y-3 w-full">
+    @csrf
+    <div class="logo flex flex-col justify-center items-center my-5">
+      <a href="{{ route('home') }}">
+        <img src="{{ url('frontend/images/turi-logo.png') }}" class="object-contain" alt="" />
+      </a>
+    </div>
+    <!-- Session Status -->
+    <x-auth-session-status class="mb-4" :status="session('status')" />
+    <!-- Validation Errors -->
+    <x-auth-validation-errors class="mb-4" :errors="$errors" />
+    <!-- Password Reset Token -->
+    <input type="hidden" name="token" value="{{ $request->route('token') }}">
+    <div class="email flex flex-col space-y-1 text-gray-600 font-light">
+      <label for="email">Email</label>
+      <input value="{{ old('email', $request->email) }}" required type="email" id="email" name="email" class="w-full py-2 px-2 rounded-sm border border-gray-300" />
+    </div>
+    <div class="password flex flex-col space-y-1 text-gray-600 font-light">
+      <label for="password">Password</label>
+      <input required type="password" id="password" name="password"
+        class="w-full py-2 px-2 rounded-sm border border-gray-300 tracking-widest" />
+    </div>
+    <div class="password_confirmation flex flex-col space-y-1 text-gray-600 font-light">
+        <label for="password_confirmation">Confirm Password</label>
+        <input required type="password" id="password_confirmation" name="password_confirmation" class="w-full py-2 px-2 rounded-sm border border-gray-300 tracking-widest" />
+    </div>
+    <div class="btn-signin">
+      <button type="submit" class="text-center text-white tracking-wide rounded-sm text-wh ite py-2 w-full">
+        RESET PASSWORD
+      </button>
+    </div>
+  </form>
+  </div>
+@endsection

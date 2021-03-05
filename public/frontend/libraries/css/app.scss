@@ -490,7 +490,11 @@ footer {
 
 // ============== ANIMATION ==================
 #dropdown-link {
-  animation: dropdown 0.3s ease;
+  animation: dropdown 0.5s ease;
+}
+
+.animate-dropdown {
+  animation: dropdown 0.2s ease;
 }
 
 #mobile-nav {
