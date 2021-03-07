@@ -22,7 +22,7 @@
     @endif
     <div class="btn-signin">
       <button type="submit" class="text-center text-white tracking-wide rounded-sm text-wh ite py-2 w-full">
-        RESEN VERIFICATION EMAIL
+        RESEND VERIFICATION EMAIL
       </button>
     </div>
   </form>
