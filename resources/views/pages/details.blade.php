@@ -27,7 +27,7 @@
           <!-- IMAGE GALLERY -->
           <div class="main-image bg-black bg-cover my-2 flex justify-center items-center">
             <img
-              src="{{ Storage::url( $item->travel_galleries->first()->image ) }}"
+              src="{{ $item->travel_galleries->count() ? Storage::url( $item->travel_galleries->first()->image ) : url('frontend/images/holder-card.png') }}"
               class="w-auto" id="main-image" alt="" />
           </div>
           <div class="image-choice grid grid-cols-5 gap-1">

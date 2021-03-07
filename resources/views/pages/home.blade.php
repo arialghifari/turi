@@ -60,7 +60,7 @@
       <!-- popular destination card -->
       <div class="card-destination flex justify-center items-center">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-          @foreach ($items as $item)
+          @forelse ($items as $item)
             <div class="card text-white text-center flex flex-col justify-between py-7 bg-cover bg-center rounded-sm"
             style="background-image: url('{{ $item->travel_galleries->count() ? Storage::url($item->travel_galleries->first()->image) : ( url('frontend/images/holder-card.png') ) }}')">
               <div>
@@ -70,8 +70,21 @@
               <div class="card-btn-details">
                 <a href="{{ route('details', $item->slug) }}" class="py-2 px-3">More Details</a>
               </div>
-            </div>      
-          @endforeach
+            </div>
+          @empty
+            <div class="card text-white text-center flex flex-col justify-between py-7 bg-cover bg-center rounded-sm"
+            style="background-image: url('frontend/images/holder-card.png') ">
+            </div>
+            <div class="card text-white text-center flex flex-col justify-between py-7 bg-cover bg-center rounded-sm"
+            style="background-image: url('frontend/images/holder-card.png') ">
+            </div>
+            <div class="card text-white text-center flex flex-col justify-between py-7 bg-cover bg-center rounded-sm"
+            style="background-image: url('frontend/images/holder-card.png') ">
+            </div>
+            <div class="card text-white text-center flex flex-col justify-between py-7 bg-cover bg-center rounded-sm"
+            style="background-image: url('frontend/images/holder-card.png') ">
+            </div>
+          @endforelse
         </div>
       </div>
     </section>

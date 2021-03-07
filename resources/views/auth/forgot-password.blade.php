@@ -12,7 +12,7 @@
     <x-auth-session-status class="mb-4" :status="session('status')" />
     <!-- Validation Errors -->
     <x-auth-validation-errors class="mb-4" :errors="$errors" />
-    <div class="text-sm text-gray-500 text-center max-w-xs">
+    <div class="text-sm text-gray-500 max-w-xs">
       <p>Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.</p>
     </div>
     <div class="email flex flex-col space-y-1 text-gray-600 font-light">

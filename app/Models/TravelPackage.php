@@ -29,5 +29,9 @@ class TravelPackage extends Model
     public function travel_galleries() {
         return $this->hasMany(TravelGallery::class, 'travel_packages_id', 'id');
     }
+
+    public function transactions() {
+        return $this->hasMany(Transaction::class, 'travel_packages_id', 'id');
+    }
     
 }
