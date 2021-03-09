@@ -9,8 +9,8 @@
     </div>
 
     <div class="nav-right hidden md:flex items-center">
-      <a class="mx-2 p-2 text-lg font-semibold" href="{{ route('home') }}">Home</a>
-      <a class="mx-2 p-2 text-lg font-light" href="#">Travel Packages</a>
+      <a class="mx-2 p-2 text-lg {{ request()->is('/') ? 'font-semibold' : 'font-light' }}" href="{{ route('home') }}">Home</a>
+      <a class="mx-2 p-2 text-lg {{ request()->is('travel-packages*') ? 'font-semibold' : 'font-light' }}" href="{{ route('travel-packages') }}">Travel Packages</a>
       <div class="dropdown relative">
         <button id="btn-services" class="mx-2 p-2 text-lg flex items-center font-light" href="#">
           Services
@@ -35,7 +35,7 @@
         </button>
       </a>
       @endguest
-
+      
       @auth
       <form action="{{ route('logout') }}" method="POST" class="h-full">
         @csrf
@@ -58,7 +58,7 @@
       </a>
     </div>
 
-    <div id="mobile-nav" class="nav-hamburger-link hidden top-0 bg-gray-200 h-full w-full text-center">
+    <div id="mobile-nav" class="nav-hamburger-link z-20 hidden top-0 bg-gray-200 h-full w-full text-center">
       <!-- close icon  -->
       <div id="close-icon" class="absolute top-4 right-3">
         <a href="#" class="">
@@ -71,8 +71,8 @@
       </div>
       <!-- link  -->
       <div class="flex w-full h-full flex-col items-center justify-center">
-        <a href="{{ route('home') }}" class="text-xl hover:bg-gray-50 w-full py-1 my-1 font-semibold">Home</a>
-        <a href="#" class="text-xl hover:bg-gray-50 w-full py-1 my-1">Travel Packages</a>
+        <a href="{{ route('home') }}" class="text-xl hover:bg-gray-50 w-full py-1 my-1 {{ request()->is('/') ? 'font-semibold' : '' }}">Home</a>
+        <a href="{{ route('travel-packages') }}" class="text-xl hover:bg-gray-50 w-full py-1 my-1 {{ request()->is('travel-packages*') ? 'font-semibold' : '' }}">Travel Packages</a>
         <a href="#" id="services-mobile"
           class="text-xl hover:bg-gray-50 w-full py-1 my-1 flex items-center justify-center">
           <div class="flex items-center justify-center">

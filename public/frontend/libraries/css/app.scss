@@ -1,8 +1,3 @@
-.border-thumbs {
-  border: #5fffb5 4px solid;
-  transition: ease 0.01s;
-}
-
 body {
   font-family: "Assistant";
 }
@@ -114,6 +109,23 @@ body {
     .card {
       height: 380px;
       width: 260px;
+      overflow: hidden;
+
+      &:hover img {
+        transform: scale(1.1);
+      }
+
+      img {
+        transition: 0.65s;
+      }
+
+      .title {
+        text-shadow: -1px 0 #353535, 0 1px #353535, 1px 0 #353535, 0 -1px #353535;
+      }
+
+      .gradient {
+        background: linear-gradient(180deg, rgba(70, 70, 70, 0.3) 0%, rgba(255, 255, 255, 0) 100%);
+      }
 
       .card-btn-details a {
         border-radius: 4px;
@@ -124,6 +136,17 @@ body {
         }
       }
     }
+  }
+}
+
+.popular-destination-home {
+  margin-bottom: 180px;
+
+  .popular-title {
+    color: #061d51;
+    margin-top: -70px;
+    height: 530px;
+    background-color: #F3F4F6;
   }
 }
 
@@ -243,12 +266,15 @@ footer {
           }
         }
       }
+      
       .main-image {
-        max-height: 440px;
+        height: 440px;
         img {
           max-height: 440px;
         }
       }
+
+      
 
       .insight {
         p {
@@ -271,7 +297,7 @@ footer {
       }
 
       .image-choice .image-thumbs:first-child {
-        // border: #5fffb5 4px solid;
+          border: #5fffb5 3px solid;
       }
     }
 
@@ -461,6 +487,19 @@ footer {
       height: 55px;
     }
   }
+
+  .main-details {
+    .cont {
+      .details-destination {
+        .main-image {
+          height: 300px;
+          img {
+            max-height: 300px;
+          }
+        }
+      }
+    }
+  }
 }
 
 // MEDIUM
@@ -489,25 +528,14 @@ footer {
 }
 
 // ============== ANIMATION ==================
-#dropdown-link {
-  animation: dropdown 0.5s ease;
-}
 
 .animate-dropdown {
-  animation: dropdown 0.2s ease;
-}
-
-#mobile-nav {
-  animation: nav-mobile 0.5s ease alternate;
-}
-
-#services-mobile-menu {
-  animation: dropdown 0.5s ease alternate;
+  animation: dropdown 0.3s ease;
 }
 
 @keyframes dropdown {
   from {
-    transform: translateY(-10%);
+    transform: translateY(-5%);
     opacity: 0;
   }
   to {
@@ -516,7 +544,11 @@ footer {
   }
 }
 
-@keyframes nav-mobile {
+#mobile-nav {
+  animation: mobile-nav 0.5s ease;
+}
+
+@keyframes mobile-nav {
   from {
     transform: translateX(20%);
     opacity: 0;
@@ -525,4 +557,8 @@ footer {
     transform: translateX(0%);
     opacity: 1;
   }
+}
+
+#services-mobile-menu {
+  animation: dropdown 0.5s ease alternate;
 }

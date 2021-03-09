@@ -21,4 +21,10 @@ class HomeController extends Controller
             'items' => $items
         ]);
     }
+
+    public function travelPackages() {
+        $items = TravelPackages::get();
+
+        return $items;
+    }
 }

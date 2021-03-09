@@ -28,21 +28,21 @@
           <div class="main-image bg-black bg-cover my-2 flex justify-center items-center">
             <img
               src="{{ $item->travel_galleries->count() ? Storage::url( $item->travel_galleries->first()->image ) : url('frontend/images/holder-card.png') }}"
-              class="w-auto" id="main-image" alt="" />
+              class="w-auto object-contain" id="main-image" alt="" />
           </div>
           <div class="image-choice grid grid-cols-5 gap-1">
             @foreach ($item->travel_galleries as $thumb)
               <div class="image-thumbs flex items-center justify-center cursor-pointer border-4 border-white">
                 <img
                 src="{{ Storage::url($thumb->image) }}"
-                class="object-cover object-center w-full max-h-10 sm:max-h-16" alt="" />
+                class="object-cover object-center w-full h-10 sm:h-16" alt="" />
               </div>
             @endforeach
           </div>
 
           <!-- INSIGHT -->
           <div class="insight space-y-2 my-5">
-            <p class="font-semibold text-xl">little insight about {{ $item->title }}</p>
+            <p class="font-semibold text-xl">Little Insight About {{ $item->title }}</p>
             <p class="text-gray-500 leading-relaxed">
               {{ $item->about }}
             </p>

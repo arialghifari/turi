@@ -1,7 +1,4 @@
 @extends('layouts.admin')
-@section('transaction-active')
-  <span class="absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg" aria-hidden="true"></span>
-@endsection
 @section('content')
 <main class="h-full overflow-y-auto">
   <div class="container px-6 mx-auto grid space-y-6 my-6">

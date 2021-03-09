@@ -8,7 +8,7 @@
     </a>
     <ul class="mt-6">
       <li class="relative px-6 py-3">
-        @yield('dashboard-active')
+        <span class="{{ request()->is('admin') ? 'absolute' : 'hidden' }} inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg" aria-hidden="true"></span>
         <a
           class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 dark:text-gray-100"
           href="{{ route('dashboard') }}"
@@ -33,7 +33,7 @@
     </ul>
     <ul>
       <li class="relative px-6 py-3">
-        @yield('travel-package-active')
+        <span class="{{ request()->is('admin/travel-package*') ? 'absolute' : 'hidden' }} inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg" aria-hidden="true"></span>
         <a
           class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
           href="{{ route('travel-package.index') }}"
@@ -56,7 +56,7 @@
         </a>
       </li>
       <li class="relative px-6 py-3">
-        @yield('travel-gallery-active')
+        <span class="{{ request()->is('admin/travel-gallery*') ? 'absolute' : 'hidden' }} inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg" aria-hidden="true"></span>
         <a
           class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
           href="{{ route('travel-gallery.index') }}"
@@ -79,7 +79,7 @@
         </a>
       </li>
       <li class="relative px-6 py-3">
-        @yield('transaction-active')
+        <span class="{{ request()->is('admin/transaction*') ? 'absolute' : 'hidden' }} inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg" aria-hidden="true"></span>
         <a
           class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
           href="{{ route('transaction.index') }}"
@@ -136,9 +136,8 @@
     </a>
     <ul class="mt-6">
       <li class="relative px-6 py-3">
-        @yield('dashboard-active')
         <a
-          class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 dark:text-gray-100"
+          class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 dark:text-gray-100 {{ request()->is('admin') ? 'text-gray-800' : '' }}"
           href="{{ route('dashboard') }}"
         >
           <svg
@@ -161,9 +160,8 @@
     </ul>
     <ul>
       <li class="relative px-6 py-3">
-        @yield('travel-package-active')
         <a
-          class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+          class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 {{ request()->is('admin/travel-package*') ? 'text-gray-800' : '' }}"
           href="{{ route('travel-package.index') }}"
         >
           <svg
@@ -184,9 +182,8 @@
         </a>
       </li>
       <li class="relative px-6 py-3">
-        @yield('travel-gallery-active')
         <a
-          class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+          class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 {{ request()->is('admin/travel-gallery*') ? 'text-gray-800' : '' }}"
           href="{{ route('travel-gallery.index') }}"
         >
           <svg
@@ -207,9 +204,8 @@
         </a>
       </li>
       <li class="relative px-6 py-3">
-        @yield('transaction-active')
         <a
-          class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+          class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 {{ request()->is('admin/transaction*') ? 'text-gray-800' : '' }}"
           href="{{ route('transaction.index') }}"
         >
           <svg

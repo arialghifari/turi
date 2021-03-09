@@ -50,7 +50,7 @@
               </div>
               <div class="item bg-yellow-200">
                 <img
-                  class="w-full h-full object-cover object-bottom"
+                  class="w-full h-full object-cover object-center"
                   src="{{ url('frontend/images/login_d.png') }}"
                   alt=""
                 />

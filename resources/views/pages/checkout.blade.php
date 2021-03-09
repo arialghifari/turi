@@ -94,47 +94,49 @@
               <div class="form-wrap">
                 <form
                   action=""
-                  class="flex flex-col lg:flex-row space-y-2 lg:space-y-0 justify-between"
                 >
-                  <input
-                    type="text"
-                    placeholder="Username"
-                    name="username"
-                    required
-                    class="text-sm text-gray-700 border border-gray-300 rounded-md py-2 lg:py-1 px-2"
-                  />
-                  <select
-                    id="visa"
-                    name="is_visa"
-                    required
-                    class="text-sm text-gray-700 border border-gray-300 rounded-md py-2 lg:py-1 px-2"
-                  >
-                    <option selected disabled hidden>Select Visa</option>
-                    <option hidden>This is just placeholder</option>
-                    <option value="1">30 Days</option>
-                    <option value="0">N/A</option>
-                  </select>
-                  <input
-                    type="text"
-                    placeholder="Nationality"
-                    name="nationality"
-                    required
-                    class="text-sm text-gray-700 border border-gray-300 rounded-md py-2 lg:py-1 px-2"
-                  />
-                  <input
-                    type="date"
-                    placeholder="DOE Passport"
-                    name="doe_passport"
-                    required
-                    class="text-sm text-gray-700 border border-gray-300 rounded-md py-2 lg:py-1 px-2"
-                  />
+                  <div class="flex flex-col md:flex-row space-y-1.5 md:space-y-0 space-x-0 md:space-x-1.5">
+                    <input
+                      type="text"
+                      placeholder="Username"
+                      name="username"
+                      required
+                      class="text-sm flex-1 text-gray-700 border border-gray-300 rounded-md py-2 lg:py-0 px-2"
+                    />
+                    <select
+                      id="visa"
+                      name="is_visa"
+                      required
+                      class="text-sm flex-1 text-gray-700 border border-gray-300 rounded-md py-2 lg:py-0 px-2"
+                    >
+                      <option selected disabled hidden>Select Visa</option>
+                      <option value="1">30 Days</option>
+                      <option value="0">N/A</option>
+                    </select>
+                    <input
+                      type="text"
+                      placeholder="Nationality"
+                      name="nationality"
+                      required
+                      class="text-sm flex-1 text-gray-700 border border-gray-300 rounded-md py-2 lg:py-0 px-2"
+                    />
+                    <input
+                      type="text"
+                      placeholder="DOE Passport"
+                      name="doe_passport"
+                      required
+                      onfocus="(this.type='date')"
+                      onblur="(this.type='text')"
+                      class="text-sm flex-1 text-gray-700 border border-gray-300 rounded-md py-2 lg:py-0 px-2"
+                    />
 
-                  <button
-                    type="submit"
-                    class="text-white mt-2 py-2 px-3 rounded-md text-sm"
-                  >
-                    ADD NOW
-                  </button>
+                    <button
+                      type="submit"
+                      class="text-white mt-2 sm:mt-0 py-2 px-3 rounded-md text-sm flex-1"
+                    >
+                      ADD NOW
+                    </button>
+                  </div>
                 </form>
               </div>
             </form>

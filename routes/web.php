@@ -10,6 +10,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\DetailController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\SuccessCheckoutController;
+use App\Http\Controllers\TravelPackagesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,6 +24,9 @@ use App\Http\Controllers\SuccessCheckoutController;
 */
 Route::get('/', [HomeController::class, 'index'])
     ->name('home');
+
+Route::get('/travel-packages', [TravelPackagesController::class, 'index'])
+    ->name('travel-packages');
 
 Route::get('/details/{slug}', [DetailController::class, 'index'])
     ->name('details');
