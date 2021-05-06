@@ -47,7 +47,7 @@ class TransactionController extends Controller
      */
     public function store(TravelPackageRequest $request)
     {
-        $data = $request->all();
+        $data = $request->get();
         $data['slug'] = Str::slug($request->title);
 
         TravelPackage::create($data);
@@ -99,7 +99,7 @@ class TransactionController extends Controller
      */
     public function update(TransactionStatusRequest $request, $id)
     {
-        $data = $request->all();
+        $data = $request->get();
         
         $item = Transaction::findOrFail($id);
 

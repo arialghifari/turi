@@ -47,6 +47,6 @@
     </div>
     <hr />
     <div class="bottom text-sm sm:text-base font-light text-gray-500 flex justify-center items-center text-center">
-      2021 Copyrights TURI • All Rights Reserved • Made In Mataram
+      <span>a</span> &nbsp;Copyrights TURI • All Rights Reserved • Made In Mataram
     </div>
   </footer>

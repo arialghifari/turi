@@ -1,5 +1,5 @@
 body {
-  font-family: "Assistant";
+  font-family: "Assistant", sans-serif;
 }
 
 .container-nav {
@@ -29,6 +29,18 @@ body {
             color: #516ba7;
           }
         }
+      }
+      .user-nav{
+        .user-nav-item button {
+          color: #061d51;
+        }
+      }
+
+      .user-nav-item::before {
+        background: #000;
+        width: 100%;
+        display: block;
+        height: 20px;
       }
     }
 

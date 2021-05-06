@@ -32,7 +32,7 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
-        function getUserRolesToAuth($user) {
+        function getUserRedirect($user) {
             if ($user->roles == 'ADMIN') {
                 return redirect('/admin');
             }
@@ -40,7 +40,7 @@ class AuthenticatedSessionController extends Controller
             return redirect('/');
         }
 
-        return getUserRolesToAuth(Auth::user());
+        return getUserRedirect(Auth::user());
         // return redirect()->intended(RouteServiceProvider::HOME);
     }
 

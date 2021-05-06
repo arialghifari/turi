@@ -48,7 +48,7 @@ class TravelGalleryController extends Controller
      */
     public function store(TravelGalleryRequest $request)
     {
-        $data = $request->all();
+        $data = $request->get();
         $data['image'] = $request->image->store('assets/gallery', 'public');
 
         TravelGallery::create($data);
@@ -93,7 +93,7 @@ class TravelGalleryController extends Controller
      */
     public function update(TravelGalleryImageRequest $request, $id)
     {
-        $data = $request->all();
+        $data = $request->get();
         $item = TravelGallery::findOrFail($id);
         
         // check if there is an image input, then delete previous image

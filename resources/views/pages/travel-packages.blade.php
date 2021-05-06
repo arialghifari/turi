@@ -23,7 +23,7 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
           @forelse ($items as $item)
             <div class="card card-popular text-white text-center flex flex-col justify-between py-7 bg-cover bg-center rounded-sm relative">
-              <img class="absolute top-0 w-full h-full object-cover" src="{{ $item->travel_galleries->count() ? Storage::url($item->travel_galleries->first()->image) : ( url('frontend/images/holder-card.png') ) }}" />
+              <img loading="lazy" class="absolute top-0 w-full h-full object-cover" src="{{ $item->travel_galleries->count() ? Storage::url($item->travel_galleries->first()->image) : ( url('frontend/images/holder-card.png') ) }}" />
               <div class="gradient w-full h-full top-0 absolute"></div>
                 <div class="z-10 title">
                   <div class="card-country">{{ $item->country }}</div>

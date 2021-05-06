@@ -11,23 +11,31 @@
     <div class="nav-right hidden md:flex items-center">
       <a class="mx-2 p-2 text-lg {{ request()->is('/') ? 'font-semibold' : 'font-light' }}" href="{{ route('home') }}">Home</a>
       <a class="mx-2 p-2 text-lg {{ request()->is('travel-packages*') ? 'font-semibold' : 'font-light' }}" href="{{ route('travel-packages') }}">Travel Packages</a>
-      <div class="dropdown relative">
-        <button id="btn-services" class="mx-2 p-2 text-lg flex items-center font-light" href="#">
-          Services
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#061D51" stroke-width="1"
-            stroke-linecap="round" stroke-linejoin="round">
-            <path d="M6 9l6 6 6-6" />
-          </svg>
-        </button>
+      
+      <a class="mx-2 p-2 text-lg font-light" href="/#review">Testimonial</a>
+      {{-- CART --}}
+      @auth
+      <a class="ml-1 mr-5 p-2 text-lg font-light flex relative" href="{{ route('cart') }}" title="Cart">
+        <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="{{ request()->is('cart') ? '2.2' : '0.8' }}" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shopping-cart"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+        <span class="flex items-center justify-center absolute -right-1 -top-0.5 border-2 border-white text-white font-semibold bg-red-500 p-1 rounded-full" style="font-size: 12px; max-height:18px;">12</span>
+      </a>
 
-        <div id="dropdown-menu" class="hidden right-1 bg-white rounded-sm w-48 border border-gray-300 font-light">
-          <a class="block m-1 py-1 px-5 hover:bg-gray-100" href="#">Link 1</a>
-          <a class="block m-1 py-1 px-5 hover:bg-gray-100" href="#">Link 2</a>
-          <a class="block m-1 py-1 px-5 hover:bg-gray-100" href="#">Link 3</a>
+      {{-- USER NAV --}}
+      <div class="user-nav ml-2 mr-7 text-sm flex bg-gray-200 rounded-full cursor-pointer space-x-1.5 border-4 border-gray-200 relative ">
+        <img src="{{ url(Auth::user()->image ? 'storage/'.Auth::user()->image : 'frontend/images/user-default.png' ) }}"  style="max-width: 30px;" alt="">
+
+        <div class="user-nav-item animate-dropdown hidden absolute top-full right-0 bg-white p-1 border border-gray-300 rounded font-light">
+          <div>
+            <form method="POST" action="{{ route('logout') }}">
+            @csrf
+              <button type="submit" class="flex items-center justify-between bg-white text-gray-400 hover:bg-gray-100 py-1 px-3 rounded text-right">
+                Logout
+              </button>
+            </form>
+          </div>
         </div>
       </div>
-      <a class="mx-2 p-2 text-lg font-light" href="#">Testimonial</a>
-
+      @endauth
       @guest
       <a href="{{ route('login') }}" class="h-full">
         <button class="text-white h-full text-xl btn-signin">
@@ -35,15 +43,6 @@
         </button>
       </a>
       @endguest
-      
-      @auth
-      <form action="{{ route('logout') }}" method="POST" class="h-full">
-        @csrf
-        <button type="submit" class="text-white h-full text-xl btn-signin">
-            LOGOUT
-        </button>
-      </form>
-      @endauth
     </div>
 
     <!-- Mobile Nav -->
@@ -88,7 +87,7 @@
           <a href="#" class="hover:bg-gray-50">Link 2</a>
           <a href="#" class="hover:bg-gray-50">Link 3</a>
         </div>
-        <a href="#" class="text-xl hover:bg-gray-50 w-full py-1 my-1">Testimonial</a>
+        <a href="#review" class="text-xl hover:bg-gray-50 w-full py-1 my-1">Testimonial</a>
         @guest
           <a href="{{ route('login') }}" class="text-white sign-in-mobile text-xl py-1 px-6 my-1">
             <button>SIGN IN</button>

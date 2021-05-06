@@ -26,7 +26,7 @@
               <option selected disabled>There is no travel package available</option>
             @endforelse
           </select>
-          @error('travel_packages_id') <div class="text-xs text-red-500">{{ $message }}</div> @enderror
+          @error('travel_packages_id')<div class="text-xs text-red-500">{{ $message }}</div>@enderror
         </label>
         <label class="text-sm">
           <span class="text-gray-700 dark:text-gray-400">Image</span> |

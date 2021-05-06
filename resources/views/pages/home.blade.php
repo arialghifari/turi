@@ -17,7 +17,7 @@
           And Let Us Be In Your Journey
         </p>
         <p class="mt-4 md:mt-8">
-          <a href="#popular-destination" class="text-sm md:text-lg px-3 py-2 md:px-4 md:py-3">Begin Journey</a>
+          <a href="#popular-destination" class="text-sm md:text-lg px-3 py-2 md:p-4">Begin Journey</a>
         </p>
       </div>
     </header>
@@ -62,7 +62,7 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
           @forelse ($items as $item)
             <div class="card card-popular text-white text-center flex flex-col justify-between py-7 bg-cover bg-center rounded-sm relative">
-              <img class="absolute top-0 w-full h-full object-cover" src="{{ $item->travel_galleries->count() ? Storage::url($item->travel_galleries->first()->image) : ( url('frontend/images/holder-card.png') ) }}" />
+              <img loading="lazy" class="absolute top-0 w-full h-full object-cover" src="{{ $item->travel_galleries->count() ? Storage::url($item->travel_galleries->first()->image) : ( url('frontend/images/holder-card.png') ) }}" />
               <div class="gradient w-full h-full top-0 absolute"></div>
                 <div class="z-10 title">
                   <div class="card-country">{{ $item->country }}</div>
@@ -100,20 +100,20 @@
           </p>
         </div>
         <div class="right col-span-2 gap-2 place-items-center grid grid-cols-2 lg:grid-cols-4">
-          <img class="lg:justify-self-end justify-self-end rounded-md bg-contain" title="Ana"
+          <img loading="lazy" class="lg:justify-self-end justify-self-end rounded-md bg-contain" title="Ana"
             src="{{ url('frontend/images/ana-logo.png') }}" alt="Ana" />
-          <img class="lg:justify-self-end justify-self-start rounded-md bg-contain" title="Disney"
+          <img loading="lazy" class="lg:justify-self-end justify-self-start rounded-md bg-contain" title="Disney"
             src="{{ url('frontend/images/disney-logo.png') }}" alt="Disney" />
-          <img class="lg:justify-self-end justify-self-end rounded-md bg-contain" title="Shangri La"
+          <img loading="lazy" class="lg:justify-self-end justify-self-end rounded-md bg-contain" title="Shangri La"
             src="{{ url('frontend/images/shangri-la-logo.png') }}" alt="Shangri La" />
-          <img class="lg:justify-self-end justify-self-start rounded-md bg-contain" title="Visa"
+          <img loading="lazy" class="lg:justify-self-end justify-self-start rounded-md bg-contain" title="Visa"
             src="{{ url('frontend/images/visa-logo.png') }}" alt="Visa" />
         </div>
       </div>
     </section>
 
     <!-- REVIEWS -->
-    <section class="review mt-20 flex justify-center bg-gradient-to-b from-white to-gray-100">
+    <section class="review mt-20 flex justify-center bg-gradient-to-b from-white to-gray-100" id="review">
       <div class="cont h-full text-center">
         <div class="title space-y-1">
           <p class="font-bold text-3xl sm:text-5xl break-normal">
@@ -129,7 +129,7 @@
           class="card bg-white rounded-md border col-span-1 md:col-span-2 lg:col-span-1 border-gray-300 flex flex-col justify-between items-center">
           <div class="top pt-10 flex flex-col items-center text-center space-y-4 px-4">
             <div class="image">
-              <img src="{{ url('frontend/images/user-1.png') }}" alt="" />
+              <img loading="lazy" src="{{ url('frontend/images/user-1.png') }}" alt="" />
             </div>
             <p class="font-semibold text-lg">Adi Kurniadi</p>
             <p>" Words can't explain. I have to come back again "</p>
@@ -141,7 +141,7 @@
         <div class="card bg-white rounded-md border border-gray-300 flex flex-col justify-between items-center">
           <div class="top pt-10 flex flex-col items-center text-center space-y-4 px-4">
             <div class="image">
-              <img src="{{ url('frontend/images/user-2.png') }}" alt="" />
+              <img loading="lazy" src="{{ url('frontend/images/user-2.png') }}" alt="" />
             </div>
             <p class="font-semibold text-lg">Oksa Candra</p>
             <p>
@@ -156,7 +156,7 @@
         <div class="card bg-white rounded-md border border-gray-300 flex flex-col justify-between items-center">
           <div class="top pt-10 flex flex-col items-center text-center space-y-4 px-4">
             <div class="image">
-              <img src="{{ url('frontend/images/user-3.png') }}" alt="" />
+              <img loading="lazy" src="{{ url('frontend/images/user-3.png') }}" alt="" />
             </div>
             <p class="font-semibold text-lg">Bayu Arimbawa</p>
             <p>

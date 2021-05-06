@@ -1,0 +1,120 @@
+<mjml>
+    <mj-head>
+        <mj-title></mj-title>
+        <mj-attributes>
+            
+        </mj-attributes>
+    </mj-head>
+    <mj-body background-color="#E4E6EB">
+        <!-- LOGO -->
+        <mj-section background-color="#FFFFFF" padding-bottom="0px" padding-top="0px" border-bottom="1px dashed #CCCCCC">
+            <mj-column vertical-align="top" width="100%">
+                <mj-image src="turi-logo.png" alt="" align="center" width="120px" padding-left="0px" padding-right="0px" padding-bottom="25px" padding-top="25px"/>
+            </mj-column>
+        </mj-section>
+
+        <!-- SUB TITLE -->
+        <mj-section background-color="#FFFFFF" padding-bottom="0px" padding-top="0px">
+            <mj-column vertical-align="top" width="100%">
+                <mj-text align="center" color="#071C4D" font-size="27px" font-weight="bold" font-family="Playfair Display, Times New Roman, serif" padding-bottom="20px" padding-top="30px">
+                    Don't Forget Your E-Ticket!
+                </mj-text>
+            </mj-column>
+        </mj-section>
+
+        <!-- IMAGE -->
+        <mj-section background-color="#FFFFFF" padding-bottom="0px" padding-top="0px">
+            <mj-column vertical-align="top" width="100%">
+                <mj-image src="img.png" alt="" align="center" width="550px" padding-left="20px" padding-right="20px" />
+            </mj-column>
+        </mj-section>
+
+        <!-- BOOKING ID -->
+        <mj-section background-color="#FFFFFF" padding-top="0px" padding-bottom="0px">
+            <mj-column vertical-align="top" width="100%">
+                <mj-text align="left" color="#071C4D" font-size="18px" font-family="Assistant, Arial, sans-serif">
+                    Hi, Ari Alghifari
+                    <br><br>
+                    Here is your e-ticket.
+                    <br>
+                    Booking ID <b>#22081996</b>
+                </mj-text>
+            </mj-column>
+        </mj-section>
+
+        <!-- MEMBERS -->
+        <mj-section background-color="#FFFFFF" padding-top="0px" padding-bottom="0px">
+            <mj-column vertical-align="top" width="100%">
+                <mj-table align="left" color="#071C4D" font-size="18px" font-family="Assistant, Arial, sans-serif" line-height="26px">
+                    <tr>
+                        <td colspan="2">Members</td>
+                    </tr>
+                    <tr>
+                        <td><b>Ari Alghifari</b></td>
+                        <td align="right">Indonesia, ID</td>
+                    </tr>
+                    <tr>
+                        <td><b>Adi Kurniadi</b></td>
+                        <td align="right">Indonesia, ID</td>
+                    </tr>
+                </mj-table>
+            </mj-column>
+        </mj-section>
+
+        <!-- TRAVEL DETAILS -->
+        <mj-section background-color="#FFFFFF" padding-bottom="0px" padding-top="0px">
+            <mj-column vertical-align="top" width="100%">
+                <mj-table align="left" color="#071C4D" font-size="18px" font-family="Assistant, Arial, sans-serif" line-height="26px">
+                    <tr>
+                        <td colspan="2">Travel Details</td>
+                    </tr>
+                    <tr>
+                        <td><b>Departure</b></td>
+                        <td align="right">Istanbul, Turkey</td>
+                    </tr>
+                    <tr>
+                        <td><b>Date and Time</b></td>
+                        <td align="right">Wed, 25 March 2021</td>
+                    </tr>
+                </mj-table>
+            </mj-column>
+        </mj-section>
+
+        <!-- BUTTON -->
+        <mj-section background-color="#FFFFFF" padding-bottom="20px" padding-top="10px" border-bottom="1px dashed #CCCCCC">
+            <mj-column vertical-align="top" width="100%">
+                <mj-button font-family="Assistant, Arial, sans-serif" font-size="18px" background-color="#FF9E53">
+                    Check Details
+                </mj-button>
+            </mj-column>
+        </mj-section>
+
+        <!-- NEED SUPPORT -->
+        <mj-section background-color="#FFFFFF" padding-bottom="20px" padding-top="15px">
+            <mj-column vertical-align="top" width="100%">
+                <mj-text font-size="18px" color="#071C4D" font-family="Assistant, Arial, sans-serif" padding-bottom="4px">Need Support?</mj-text>
+                <mj-table align="left" color="#071C4D" font-size="18px" font-family="Assistant, Arial, sans-serif" line-height="26px" padding-top="5px">
+                    <tr>
+                        <td rowspan="3" width="50px">
+                            <img src="ic-support.png" alt="" align="center" width="50px" />
+                        </td>
+                        <td style="padding-left:10px">
+                            support@turi.id
+                            <br>
+                            0812 - 3456 - 7890
+                        </td>
+                    </tr>
+                </mj-table>
+            </mj-column>
+        </mj-section>
+
+        <mj-section padding-bottom="15px" padding-top="15px">
+            <mj-column vertical-align="top" width="100%">
+                <mj-text align="center" color="#071C4D" font-size="16px" font-family="Assistant, Arial, sans-serif">
+                    2021 TURI Copyright All Rights Reserved.
+                </mj-text>
+            </mj-column>
+        </mj-section>
+
+    </mj-body>
+</mjml>

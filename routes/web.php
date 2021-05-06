@@ -11,6 +11,7 @@ use App\Http\Controllers\DetailController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\SuccessCheckoutController;
 use App\Http\Controllers\TravelPackagesController;
+use App\Http\Controllers\Cart\CartController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,6 +31,10 @@ Route::get('/travel-packages', [TravelPackagesController::class, 'index'])
 
 Route::get('/details/{slug}', [DetailController::class, 'index'])
     ->name('details');
+
+Route::get('/cart', [CartController::class, 'index'])
+    ->name('cart')
+    ->middleware('auth');
 
 Route::get('/checkout/{id}', [CheckoutController::class, 'index'])
     ->name('checkout')

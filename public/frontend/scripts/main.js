@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
 
   // dropdown
-  const dropdown = document.querySelector(".dropdown");
-  const dropdownMenu = document.getElementById("dropdown-menu");
+  const dropdown = document.querySelector(".user-nav");
+  const dropdownMenu = document.querySelector(".user-nav-item");
 
   dropdown.addEventListener('mouseover', () => {
     dropdownMenu.classList.remove('hidden');
@@ -51,4 +51,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     img.style.border = "3px solid #5fffb5"; // border of the active thumb
   }));
+
+  // copyright year
+  function getYear() {
+    const date = new Date;
+    return date.getFullYear();
+  }
+  
+  const footerYear = document.querySelector('.bottom span');
+  footerYear.innerHTML = getYear();
+
 });

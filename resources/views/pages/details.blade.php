@@ -42,7 +42,7 @@
 
           <!-- INSIGHT -->
           <div class="insight space-y-2 my-5">
-            <p class="font-semibold text-xl">Little Insight About {{ $item->title }}</p>
+            <p class="font-semibold text-xl">Little Insight</p>
             <p class="text-gray-500 leading-relaxed">
               {{ $item->about }}
             </p>
